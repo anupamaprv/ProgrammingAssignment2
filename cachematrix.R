@@ -40,3 +40,40 @@ cacheSolve <- function(x, ...) {
         x$setInverse(inv)
         inv
 }
+
+
+################################################################################
+## The commands below will help test these functions
+
+## create the matrix
+## my_matrix <- makeCacheMatrix(matrix(1:4, 2, 2, byrow = TRUE))
+
+## to view the matrix 
+## > my_matrix$get()
+## result below
+##     [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4
+
+## check if inverse exists
+## > my_matrix$getInverse()
+## NULL
+
+## compute inverse
+## > cacheSolve(my_matrix)
+##      [,1] [,2]
+## [1,] -2.0  1.0
+## [2,]  1.5 -0.5
+
+## compute again, the value should be directly obtained from cache
+## > cacheSolve(my_matrix)
+## results are below:
+## getting cached data
+##      [,1] [,2]
+## [1,] -2.0  1.0
+## [2,]  1.5 -0.5
+
+## > my_matrix$getInverse()
+##      [,1] [,2]
+## [1,] -2.0  1.0
+## [2,]  1.5 -0.5
